@@ -1,6 +1,7 @@
 package services;
 
 import classes.Student;
+import exceptions.SubjectException;
 
 import java.util.Arrays;
 
@@ -9,127 +10,47 @@ public class StudentService {
     static Student[] students2;
     static Student[] students3;
     static Student[] students4;
-    static void messageForException(){
-        System.out.println("Subjects were not initialized");
-    }
-    static void messageForUnCorrectScore(){
-        System.out.println("invalid score");
-    }
 
 
     public static Student[] studentsGroup1() {
-
         Student s1 = new Student("Aram");
-        try {
-            s1.setSubjects(new String[]{"Java", "SQL", "Git", "DOM"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s1.setScores(new int[]{9, 5, 4, 6});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s1.setSubjects(new String[]{"Java", "SQL", "Git", "DOM"});
+        s1.setScores(new int[]{9, 5, 4, 6});
         Student s2 = new Student("Gevorg");
-        try {
-            s2.setSubjects(new String[]{"Java", "SQL", "Git", "DOM"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s2.setScores(new int[]{8, 8, 8, 8});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s2.setSubjects(new String[]{"Java", "SQL", "Git", "DOM"});
+        s2.setScores(new int[]{9, 8, 8, 8});
         Student s3 = new Student("Karen");
-        try {
-            s3.setSubjects(new String[]{"Java", "SQL", "Git", "DOM"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s3.setScores(new int[]{7, 7, 7, 7});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
-        students1 = new Student[]{s1,s2,s3};
+        s3.setSubjects(new String[]{"Java", "SQL", "Git", "DOM"});
+        s3.setScores(new int[]{9, 7, 7, 7});
+        students1 = new Student[]{s1, s2, s3};
         return students1;
     }
 
     static Student[] studentsGroup2() {
-
         Student s4 = new Student("Anna");
-        try {
-            s4.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s4.setScores(new int[]{9, 9, 9, 5});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s4.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
+        s4.setScores(new int[]{9, 9, 9, 5});
         Student s5 = new Student("Ani");
-        try {
-            s5.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s5.setScores(new int[]{4, 8, 4, 8});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s5.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
+        s5.setScores(new int[]{4, 9, 4, 8});
         Student s6 = new Student("Vahan");
-        try {
-            s6.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s6.setScores(new int[]{7, 9, 9, 7});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s6.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
+        s6.setScores(new int[]{7, 9, 9, 7});
         students2 = new Student[]{s4, s5, s6};
         return students2;
     }
 
-    public /*չ*/static Student[] studentsGroup3() {
+    public /*չ*/ static Student[] studentsGroup3() {
 
         Student s7 = new Student("David");
-        try {
-            s7.setSubjects(new String[]{"English", "HTML", "CSS", "JS"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s7.setScores(new int[]{6, 8, 6, 1});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s7.setSubjects(new String[]{"English", "HTML", "CSS", "JS"});
+        s7.setScores(new int[]{6, 8, 6, 10});
         Student s8 = new Student("Mary");
-        try {
-            s8.setSubjects(new String[]{"English", "HTML", "CSS", "JS"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s8.setScores(new int[]{6, 4, 2, 7});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s8.setSubjects(new String[]{"English", "HTML", "CSS", "JS"});
+        s8.setScores(new int[]{6, 4, 2, 7});
         Student s9 = new Student("John");
-        try {
-            s9.setSubjects(new String[]{"English", "HTML", "CSS", "JS"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s9.setScores(new int[]{9, 3, 7, 4});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s9.setSubjects(new String[]{"English", "HTML", "CSS", "JS"});
+        s9.setScores(new int[]{9, 3, 7, 4});
         students3 = new Student[]{s7, s8, s9};
         return students3;
     }
@@ -137,38 +58,14 @@ public class StudentService {
     static Student[] studentsGroup4() {
 
         Student s10 = new Student("Nare");
-        try {
-            s10.setSubjects(new String[]{"English", "DOM", "jQuery", "Bootstrap"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s10.setScores(new int[]{5, 10, 9, 3});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s10.setSubjects(new String[]{"English", "DOM", "jQuery", "Bootstrap"});
+        s10.setScores(new int[]{5, 10, 9, 3});
         Student s11 = new Student("Mary");
-        try {
-            s11.setSubjects(new String[]{"English", "DOM", "jQuery", "Bootstrap"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s11.setScores(new int[]{7, 8, 10, 5});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s11.setSubjects(new String[]{"English", "DOM", "jQuery", "Bootstrap"});
+        s11.setScores(new int[]{7, 8, 10, 5});
         Student s12 = new Student("John");
-        try {
-            s12.setSubjects(new String[]{"English", "DOM", "jQuery", "Bootstrap"});
-        } catch (Exception e) {
-            messageForException();
-        }
-        try {
-            s12.setScores(new int[]{4, 8, 2, 6});
-        } catch (Exception e) {
-            messageForUnCorrectScore();
-        }
+        s12.setSubjects(new String[]{"English", "DOM", "jQuery", "Bootstrap"});
+        s12.setScores(new int[]{4, 8, 2, 6});
         students4 = new Student[]{s10, s11, s12};
         return students4;
     }
@@ -208,11 +105,12 @@ public class StudentService {
             System.out.println("Average score for " + student.getName() + " is " + printAverage(student));
         }
     }
-    private static double printAverage(Student student){
+
+    private static double printAverage(Student student) {
         int sum = 0;
-        for (int i = 0; i < student.getScores().length ; i++) {
+        for (int i = 0; i < student.getScores().length; i++) {
             sum += student.getScores()[i];
         }
-        return (double)sum/student.getScores().length;
+        return (double) sum / student.getScores().length;
     }
 }

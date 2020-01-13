@@ -1,5 +1,8 @@
 package classes;
 
+import exceptions.ScoreException;
+import exceptions.SubjectException;
+
 public class Student {
     private String name;
     private int[] scores = new int[5];
@@ -9,20 +12,18 @@ public class Student {
         this.name = name;
     }
 
-    public void setScores(int[] scores)throws Exception {
-
-        for (int i = 0; i <scores.length ; i++) {
-            if (scores == null || scores[i] > 10 || scores[i] < 0)
-                throw new Exception("null");
+    public void setScores(int[] scores) throws ScoreException {
+        for (int i = 0; i < scores.length; i++) {
+            if (scores[i] > 10 || scores[i] < 0) {
+                throw new ScoreException();
+            }
         }
         this.scores = scores;
-
     }
 
-    public void setSubjects(String[] subjects) throws Exception{
-
-        if (subjects == null  || subjects.length == 0 ){
-            throw new Exception("null");
+    public void setSubjects(String[] subjects) throws SubjectException {
+        if (subjects == null || subjects.length == 0) {
+            throw new SubjectException();
         }
         this.subjects = subjects;
     }

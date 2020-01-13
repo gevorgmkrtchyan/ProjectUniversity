@@ -4,21 +4,16 @@ import classes.Faculty;
 import classes.Group;
 
 import static services.StudentService.*;
-import static services.StudentService.messageForException;
 import static services.UniversityService.university;
 
 public class FacultyService {
     static Faculty faculty1 = new Faculty("RadioTechnologies");
     static Faculty faculty2 = new Faculty("Web Designers");
-    static Faculty[] faculties = {faculty1,faculty2};
+    static Faculty[] faculties = {faculty1, faculty2};
 
-    public static void printFaculty() throws Exception {
+    public static void printFaculty() {
         faculty1.setGroups(new Group[]{GroupService.g1, GroupService.g2});
-        try {
-            faculty2.setGroups(new Group[]{GroupService.g3, GroupService.g4});
-        } catch (Exception e) {
-            System.out.println("faculty doesn't have groups");
-        }
+        faculty2.setGroups(new Group[]{GroupService.g3, GroupService.g4});
         System.out.println(("There are " + faculties.length + " faculties in " + university.getUniversityName())
                 + ("\n" + "Faculty name is --> " + faculty1.getFacultyName())
                 + ("\n" + "Faculty name is --> " + faculty2.getFacultyName()));
@@ -46,12 +41,10 @@ public class FacultyService {
 
             }
 
-        }try {
-            System.out.println(s1[0] + " is mutual for " + faculty1.getFacultyName());
-            System.out.println("average score of " + subjectName[0] + " in " + faculty1.getFacultyName() + " is " + sum/6);
-        }catch (Exception e){
-            System.out.println("Printing of average score is impossible, because subjects were not initialized");
         }
+        System.out.println(s1[0] + " is mutual for " + faculty1.getFacultyName());
+        System.out.println("average score of " + subjectName[0] + " in " + faculty1.getFacultyName() + " is " + sum / 6);
+
 
     }
 
@@ -67,24 +60,23 @@ public class FacultyService {
         for (int i = 0; i < s1.length - 2; i++) {
             for (int j = 0; j < s1.length; j++) {
                 for (int k = 0; k < 3; k++) {
-                    try {
-                        if (subjectName[i].equals(s2[j])) {
-                            index = j;
-                            arr[k] = studentsGroup3()[k].getScores()[index] +studentsGroup4()[k].getScores()[index] ;
-                            sum += arr[k];
-                        }
-                    }catch (Exception e){
-                        messageForException();
-                        break;
+
+                    if (subjectName[i].equals(s2[j])) {
+                        index = j;
+                        arr[k] = studentsGroup3()[k].getScores()[index] + studentsGroup4()[k].getScores()[index];
+                        sum += arr[k];
+
                     }
+
 
                 }
 
             }
 
         }
+
         System.out.println(s1[0] + " is mutual for " + faculty2.getFacultyName());
-        System.out.println("average score of " + subjectName[0] + " in " + faculty2.getFacultyName() + " is " + sum/6);
+        System.out.println("average score of " + subjectName[0] + " in " + faculty2.getFacultyName() + " is " + sum / 6);
     }
 
 }

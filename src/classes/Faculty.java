@@ -1,5 +1,7 @@
 package classes;
 
+import exceptions.NullGroupException;
+
 public class Faculty {
     private String facultyName;
     private Group[] groups;
@@ -13,10 +15,10 @@ public class Faculty {
         return facultyName;
     }
 
-    public void setGroups(Group[] groups)throws Exception {
-        this.groups = groups;
-        if (groups == null || groups.length == 0){
-            throw  new Exception("null");
+    public void setGroups(Group[] groups) throws NullGroupException {
+        if (groups == null || groups.length == 0) {
+            throw new NullGroupException();
         }
+        this.groups = groups;
     }
 }

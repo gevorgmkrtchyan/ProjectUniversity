@@ -1,5 +1,7 @@
 package classes;
 
+import exceptions.NullStudentException;
+
 public class Group {
     private String groupName;
     private Student students[] = new Student[10];
@@ -14,9 +16,9 @@ public class Group {
     }
 
 
-    public void setStudents(Student[] students)throws Exception {
-        if (students == null){
-            throw new Exception("group doesn't have students");
+    public void setStudents(Student[] students) throws NullStudentException {
+        if (students == null || students.length == 0){
+            throw new NullStudentException();
         }
         this.students = students;
     }

@@ -1,10 +1,12 @@
 package classes;
 
+import exceptions.NullFacultyException;
+
 public class University {
     //SINGLE TONE DESIGN PATTERN
     private static University university = new University("NPUA");
 
-    public static University getUniversity(){
+    public static University getUniversity() {
         return university;
     }
 
@@ -19,9 +21,9 @@ public class University {
         return universityName;
     }
 
-    public void setFaculties(Faculty[] faculties)throws Exception {
-        if (faculties == null || faculties.length == 0){
-            throw new Exception("University doesn't have faculties");
+    public void setFaculties(Faculty[] faculties) throws NullFacultyException {
+        if (faculties == null || faculties.length == 0) {
+            throw new NullFacultyException();
         }
         this.faculties = faculties;
     }
