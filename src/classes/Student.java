@@ -6,15 +6,15 @@ import exceptions.SubjectException;
 public class Student {
     private String name;
     private int[] scores = new int[5];
-    private String subjects[] = new String[5];
+    private String[] subjects = new String[5];
 
     public Student(String name) {
         this.name = name;
     }
 
     public void setScores(int[] scores) throws ScoreException {
-        for (int i = 0; i < scores.length; i++) {
-            if (scores[i] > 10 || scores[i] < 0) {
+        for (int score : scores) {
+            if (score > 10 || score < 0) {
                 throw new ScoreException();
             }
         }

@@ -1,18 +1,16 @@
 package services;
 
 import classes.Student;
-import exceptions.SubjectException;
-
 import java.util.Arrays;
 
 public class StudentService {
-    static Student[] students1;
-    static Student[] students2;
-    static Student[] students3;
-    static Student[] students4;
+     Student[] students1 = new Student[15];
+     Student[] students2= new Student[15];
+     Student[] students3= new Student[15];
+     Student[] students4= new Student[15];
 
 
-    public static Student[] studentsGroup1() {
+    public  Student[] studentsGroup1() {
         Student s1 = new Student("Aram");
         s1.setSubjects(new String[]{"Java", "SQL", "Git", "DOM"});
         s1.setScores(new int[]{9, 5, 4, 6});
@@ -26,21 +24,21 @@ public class StudentService {
         return students1;
     }
 
-    static Student[] studentsGroup2() {
+     Student[] studentsGroup2() {
         Student s4 = new Student("Anna");
-        s4.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
+        s4.setSubjects(new String[]{"Java", "JS", "C++", "Scala"});
         s4.setScores(new int[]{9, 9, 9, 5});
         Student s5 = new Student("Ani");
-        s5.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
+        s5.setSubjects(new String[]{"Java", "JS", "C++", "Scala"});
         s5.setScores(new int[]{4, 9, 4, 8});
         Student s6 = new Student("Vahan");
-        s6.setSubjects(new String[]{"JS", "Java", "C++", "Scala"});
+        s6.setSubjects(new String[]{"Java", "JS", "C++", "Scala"});
         s6.setScores(new int[]{7, 9, 9, 7});
         students2 = new Student[]{s4, s5, s6};
         return students2;
     }
 
-    public /*չ*/ static Student[] studentsGroup3() {
+    public /*չ*/  Student[] studentsGroup3() {
 
         Student s7 = new Student("David");
         s7.setSubjects(new String[]{"English", "HTML", "CSS", "JS"});
@@ -55,7 +53,7 @@ public class StudentService {
         return students3;
     }
 
-    static Student[] studentsGroup4() {
+     Student[] studentsGroup4() {
 
         Student s10 = new Student("Nare");
         s10.setSubjects(new String[]{"English", "DOM", "jQuery", "Bootstrap"});
@@ -70,8 +68,8 @@ public class StudentService {
         return students4;
     }
 
-    static void printStudentList1() {
-        for (Student student : students1) {
+     void printStudentList1() {
+        for (Student student : studentsGroup1()) {
             System.out.print(student.getName() + " ");
             System.out.print(Arrays.toString(student.getSubjects()) + " ");
             System.out.print(Arrays.toString(student.getScores()) + " ");
@@ -79,8 +77,8 @@ public class StudentService {
         }
     }
 
-    static void printStudentList2() {
-        for (Student student : students2) {
+     void printStudentList2() {
+        for (Student student : studentsGroup2()) {
             System.out.print(student.getName() + " ");
             System.out.print(Arrays.toString(student.getSubjects()) + " ");
             System.out.print(Arrays.toString(student.getScores()));
@@ -88,8 +86,8 @@ public class StudentService {
         }
     }
 
-    static void printStudentList3() {
-        for (Student student : students3) {
+     void printStudentList3() {
+        for (Student student : studentsGroup3()) {
             System.out.print(student.getName() + " ");
             System.out.print(Arrays.toString(student.getSubjects()) + " ");
             System.out.print(Arrays.toString(student.getScores()));
@@ -97,8 +95,8 @@ public class StudentService {
         }
     }
 
-    static void printStudentList4() {
-        for (Student student : students4) {
+     void printStudentList4() {
+        for (Student student : studentsGroup4()) {
             System.out.print(student.getName() + " ");
             System.out.print(Arrays.toString(student.getSubjects()) + " ");
             System.out.print(Arrays.toString(student.getScores()));
@@ -106,7 +104,7 @@ public class StudentService {
         }
     }
 
-    private static double printAverage(Student student) {
+    private  double printAverage(Student student) {
         int sum = 0;
         for (int i = 0; i < student.getScores().length; i++) {
             sum += student.getScores()[i];

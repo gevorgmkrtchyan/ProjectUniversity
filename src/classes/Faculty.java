@@ -21,4 +21,5 @@ public class Faculty {
         }
         this.groups = groups;
     }
+
 }
