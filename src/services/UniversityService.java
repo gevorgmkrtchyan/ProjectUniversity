@@ -10,8 +10,6 @@ public class UniversityService {
         System.out.println("University name --> " + university.getUniversityName());
         new FacultyService().printFaculty();
         new LogicServiceForGroups().printAverageScoreForEachSubjectInGroup();
-        new FacultyService().averageForFaculty1(new StudentService().studentsGroup1()[0].getSubjects());
-        new FacultyService().averageForFaculty2(new StudentService().studentsGroup3()[0].getSubjects());
     }
 
 }
