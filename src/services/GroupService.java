@@ -2,13 +2,13 @@ package services;
 
 import classes.Group;
 
-public class GroupService {
+class GroupService {
      Group g1 = new Group("R716");
      Group g2 = new Group("R707");
      Group g3 = new Group("H734");
      Group g4 = new Group("H787");
 
-    public  void printGroups() {
+     void printGroups() {
         g1.setStudents(new StudentService().studentsGroup1());
         g2.setStudents(new StudentService().studentsGroup2());
         g3.setStudents(new StudentService().studentsGroup3());

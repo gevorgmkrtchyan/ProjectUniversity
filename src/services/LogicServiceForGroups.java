@@ -2,10 +2,8 @@ package services;
 
 import classes.Student;
 
-
-
-public class LogicServiceForGroups {
-    public void averageScoreForFirstSubjectInFirstGroup(Student[] students, String groupName) {
+class LogicServiceForGroups {
+    private void averageScoreForFirstSubjectInFirstGroup(Student[] students, String groupName) {
         int sum = 0;
         for (Student student : students) {
             sum += student.getScores()[0];
@@ -45,8 +43,7 @@ public class LogicServiceForGroups {
                 + " in " + groupName + " is " + average);
 
     }
-
-    public  void printAverageScoreForEachSubjectInGroup() {
+    void printAverageScoreForEachSubjectInGroup() {
         System.out.println("--------------------------------------------------\n");
         averageScoreForFirstSubjectInFirstGroup(new StudentService().studentsGroup1(), new GroupService().g1.getGroupName());
         averageScoreForSecondSubjectInFirstGroup(new StudentService().studentsGroup1(), new GroupService().g1.getGroupName());

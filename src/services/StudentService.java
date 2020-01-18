@@ -3,14 +3,14 @@ package services;
 import classes.Student;
 import java.util.Arrays;
 
-public class StudentService {
-     Student[] students1 = new Student[15];
-     Student[] students2= new Student[15];
-     Student[] students3= new Student[15];
-     Student[] students4= new Student[15];
+ class StudentService {
+    private Student[] students1 = new Student[15];
+    private Student[] students2= new Student[15];
+    private Student[] students3= new Student[15];
+    private Student[] students4= new Student[15];
 
 
-    public  Student[] studentsGroup1() {
+    Student[] studentsGroup1() {
         Student s1 = new Student("Aram");
         s1.setSubjects(new String[]{"Java", "SQL", "Git", "DOM"});
         s1.setScores(new int[]{9, 5, 4, 6});
@@ -38,7 +38,7 @@ public class StudentService {
         return students2;
     }
 
-    public /*չ*/  Student[] studentsGroup3() {
+     Student[] studentsGroup3() {
 
         Student s7 = new Student("David");
         s7.setSubjects(new String[]{"English", "HTML", "CSS", "JS"});

@@ -3,7 +3,7 @@ package services;
 import classes.University;
 
 public class UniversityService {
-    University university = University.getUniversity();
+  private   University university = University.getUniversity();
 
     public void printUniversity() {
         university.setFaculties(new FacultyService().faculties);
