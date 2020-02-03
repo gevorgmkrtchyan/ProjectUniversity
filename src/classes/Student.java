@@ -22,10 +22,15 @@ public class Student {
     }
 
     public void setSubjects(String[] subjects) throws SubjectException {
-        if (subjects == null || subjects.length == 0) {
-            throw new SubjectException();
-        }
+      if (subjects == null) throw new SubjectException("Subjects can not be null.");
+      if (subjects.length == 0) throw new SubjectException("The student must have at least one subject.");
+      ifSubjectIsNull(subjects);
         this.subjects = subjects;
+    }
+    private static void ifSubjectIsNull(String[] subjects){
+        for (String subject : subjects) {
+            if (subject == null) throw new SubjectException("Has been found null element");
+        }
     }
 
     public int[] getScores() {

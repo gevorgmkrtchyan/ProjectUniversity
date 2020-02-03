@@ -1,6 +1,7 @@
 package classes;
 
 import exceptions.NullFacultyException;
+import java.util.Arrays;
 
 public class University {
     //SINGLE TONE DESIGN PATTERN
@@ -22,9 +23,14 @@ public class University {
     }
 
     public void setFaculties(Faculty[] faculties) throws NullFacultyException {
-        if (faculties == null || faculties.length == 0) {
-            throw new NullFacultyException();
-        }
+        if (faculties == null ) throw new NullFacultyException("Faculties can not be null.");
+        if (faculties.length == 0) throw new NullFacultyException("There must be at least one faculty.");
+        isUniversityContainsNullElement(faculties);
         this.faculties = faculties;
+    }
+    private static void isUniversityContainsNullElement(Faculty[] faculties){
+        for (Faculty faculty : faculties) {
+            if (faculty == null) throw new NullFacultyException("Has been found null element");
+        }
     }
 }

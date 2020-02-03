@@ -7,7 +7,7 @@ import classes.University;
 class FacultyService {
     Faculty faculty1 = new Faculty("RadioTechnologies");
     Faculty faculty2 = new Faculty("Web Designers");
-    Faculty[] faculties = {faculty1, faculty2};
+    Faculty[] faculties = {faculty1,faculty2};
 
    void printFaculty() {
         faculty1.setGroups(new Group[]{new GroupService().g1, new GroupService().g2});
@@ -17,6 +17,4 @@ class FacultyService {
                 + ("\n" + "Faculty name is --> " + faculty2.getFacultyName()));
         new GroupService().printGroups();
     }
-
-
 }

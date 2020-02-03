@@ -14,13 +14,13 @@ class GroupService {
         g3.setStudents(new StudentService().studentsGroup3());
         g4.setStudents(new StudentService().studentsGroup4());
         System.out.println("\n" + "Group name is --> " + g1.getGroupName() + ", belongs " + new FacultyService().faculty1.getFacultyName() + "\n");
-        new StudentService().printStudentList1();
+        new StudentService().printStudnetList(g1.getStudents());
         System.out.println("\n" + "Group name is --> " + g2.getGroupName() + ", belongs " + new FacultyService().faculty1.getFacultyName() + "\n");
-        new StudentService().printStudentList2();
+        new StudentService().printStudnetList(g2.getStudents());
         System.out.println("\n" + "Group name is --> " + g3.getGroupName() + " belongs " + new FacultyService().faculty2.getFacultyName() + "\n");
-        new StudentService().printStudentList3();
+        new StudentService().printStudnetList(g3.getStudents());
         System.out.println("\n" + "Group name is --> " + g4.getGroupName() + " belongs " + new FacultyService().faculty2.getFacultyName() + "\n");
-        new StudentService().printStudentList4();
+        new StudentService().printStudnetList(g4.getStudents());
     }
 
 }

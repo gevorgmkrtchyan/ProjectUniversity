@@ -16,10 +16,14 @@ public class Faculty {
     }
 
     public void setGroups(Group[] groups) throws NullGroupException {
-        if (groups == null || groups.length == 0) {
-            throw new NullGroupException();
-        }
+       if (groups == null) throw new NullGroupException("Groups can not be null");
+       if (groups.length == 0) throw new NullGroupException("The faculty must have at least one group");
+       isFacultyContainsNullElement(groups);
         this.groups = groups;
     }
-
+private static void isFacultyContainsNullElement(Group[] groups){
+    for (Group group : groups) {
+        if (group == null) throw new NullGroupException("Has been found null element");
+    }
+}
 }
